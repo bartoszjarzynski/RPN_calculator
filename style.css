@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #131313;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  line-height: 2;
+}
+
+h1{
+  font-size: 72px;
+  font-weight: 900;
+  margin: auto;
+}
+
+header, main, footer{
+  margin-inline: 2rem;
+}
+
+button{
+  cursor: pointer;
+}
+
+p{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+
+.calculator input{
+    width: 30vw;
+    padding: 1rem 2rem;
+    margin-inline: 0.25rem;
+    font-size: 24px;
+    border-radius: 1rem;
+    cursor: default;
+}
+.calculator button{
+  padding: 1rem 2rem;
+  font-size: 24px;
+  border-radius: 1rem;
+  background-color: #112e13;
+  color: grey;
+  transition: 0.25s;
+  font-weight: bold;
+}
+
+.calculator button:hover{
+  animation: pulse 1s;
+  color: #fff;
+  background-color: #45e04f;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #45e04f; }
+}
+
+#error {
+  font-size: 24px;
+  font-weight: 700;
+  color: red;
+}
+
+#stack{
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.buttons, .operators, .cleanup, .decomposition{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-inline: auto; 
+}
+
+.buttons button{
+    padding: 1.5rem 2rem;
+    font-size: 24px;
+    border-radius: 1rem;
+    border: none;
+    transition: 0.25s;
+}
+
+.buttons button:hover, .buttons button:focus{
+  box-shadow: inset 0 3.25em 0 0 #112e13;
+  color: white;
+  font-weight: 600;
+}
+
+.operators button{
+    padding: 1.5rem 0;
+    font-size: 24px;
+    border-radius: 1rem;
+    min-width: 90px;
+    transition: 0.25s;
+}
+
+.operators button:hover, .operators button:focus{
+  box-shadow: inset 0 3.25em 0 0 #112e13;
+  color: white;
+  font-weight: 600;
+}
+
+.cleanup button{
+    padding: 1rem;
+    font-size: 24px;
+    border-radius: 1rem;
+    min-width: 180px;
+}
+
+#clear, #backspace{
+  background-color: darkred;
+  color: white;
+  font-weight: bold;
+}
+
+#backspace{
+  background-color: darkslategrey;
+}
+
+.decomposition{
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+
+footer{
+    position: absolute;
+    text-align: center;
+    bottom: .25rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 1200px){
+  .calculator input{
+    width: 50vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  .buttons button, .operators button{
+    flex: 1;
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 600px), (max-height: 650px){
+  .calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .calculator input{
+    width: 100%;
+    margin-inline: 0;
+  }
+  .calculator button{
+    width: 50%;
+    font-size: 16px;
+  }
+
+  .buttons{
+    margin-top: .5rem;
+  }
+  .buttons button, .operators button{
+    padding: 1rem;
+    font-size: 16px;
+    min-width: initial;
+    max-width: initial;
+  }
+
+  .cleanup button{
+    min-width: 75%;
+    font-size: 20px;
+    padding: 1rem 0;
+    min-width: initial;
+    flex: 1;
+  }
+
+  .decomposition{
+    margin-bottom: 2rem;
+  }
+
+  h1{
+    font-size: 48px;
+    line-height: 1.2;
+    padding: 1rem 0.5rem;
+  }
+  header, main{
+    margin-inline: 1rem;
+  }
+  header{
+    display: none;
+  }
+
+  #error{
+    font-size: 24px;
+  }
+  #stack{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) and (max-height: 400px){
+  .calculator input{
+    padding: .5rem 1rem;
+  }
+  .operators{
+    margin-top: 1rem;
+  }
+}
